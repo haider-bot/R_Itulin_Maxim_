@@ -1,0 +1,18 @@
+﻿# CMakeList.txt: проект CMake для CMakeProject2; включите исходный код и определения,
+# укажите здесь логику для конкретного проекта.
+#
+cmake_minimum_required (VERSION 3.8)
+
+project(CMakeProject2)			# Название проекта
+
+set(SOURCE_EXE CMakeProject2.cpp)		# Установка переменной со списком исходников для исполняемого файла
+
+set(SOURCE_LIB foo.cpp)			# Тоже самое, но для библиотеки
+
+add_library(foo STATIC ${SOURCE_LIB})	# Создание статической библиотеки с именем foo
+
+add_executable(CMakeProject2 ${SOURCE_EXE})	# Создает исполняемый файл с именем main
+
+target_link_libraries(CMakeProject2 foo)		# Линковка программы с библиотекой
+
+# TODO: Добавьте тесты и целевые объекты, если это необходимо.
